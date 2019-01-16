@@ -1,0 +1,22 @@
+2," <card xmlns='"http://businesscard.org'">
+   <name>John Doe</name>
+   <title>CEO, Widget Inc.</title>
+   <email>john.doe@widget.com</email>
+   <phone>(202) 456-1414</phone>
+   <logo url='"widget.gif'"/>
+ </card>",user2,rewrfew
+21,"<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don''t forget me this weekend!</body>
+</note>",user1,diag1
+20,gfsafsa,user1,edited name
+22,"Edited diag
+<note>
+
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don''t forget me this weekend!</body>
+</note>",user1,diag2
