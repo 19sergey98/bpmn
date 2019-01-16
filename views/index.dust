@@ -1,0 +1,98 @@
+{>"layout" /}
+
+{<body}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<style> 
+  button{
+  margin: 5px;
+}
+</style>
+
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal">
+  New diagram
+  </button>
+<br />
+  {#diagrams}
+    <div class="well">
+      
+      <h4>{diagramname} <button class="btn btn-outline-info pull-right edit-diagram" 
+      data-toggle="modal" 
+      data-target="#editformModal"
+      data-id="{id}"
+      data-diagramname="{diagramname}"
+      data-diagram="{diagram}"
+      >
+      view and edit</button>
+
+      <button class="btn btn-outline-danger delete-diagram" 
+      data-id = "{id}" >delete</button>
+      </h4>
+      
+  
+  {/diagrams} 
+    </div>
+<!-- Add Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form method="post" action="/add">
+           <div class="modal-header">
+              <h5 class="modal-title" id="formModalLabel">New diagram</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>diagram name</label>
+                <input type="text" class="form-control" name="diagramname"/>
+              </div>
+              <div class="form-group">
+                <label>diagram</label>
+                <textarea class="form-control" name="diagram"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary" value="Save"/>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editformModal" tabindex="-1" role="dialog" aria-labelledby="editformModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form method="post" action="/edit">
+        <input type="hidden" id="edit-form-id" name="id">        
+           <div class="modal-header">
+              <h5 class="modal-title" id="formModalLabel">New diagram</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label>diagram name</label>
+                <input type="text" class="form-control" name="diagramname" id="edit-form-diagramname"/>
+              </div>
+              <div class="form-group">
+                <label>diagram</label>
+                <textarea class="form-control" name="diagram" id="edit-form-diagram"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-primary" value="Save"/>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+{/body}
